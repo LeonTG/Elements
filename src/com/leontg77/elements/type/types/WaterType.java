@@ -47,7 +47,7 @@ public class WaterType extends Type implements Listener {
 		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 1));
 		player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 1));
 		
-		player.setVelocity(player.getLocation().getDirection().multiply(3));
+		player.setVelocity(player.getLocation().getDirection().multiply(1));
 	}
 	
 	@EventHandler
