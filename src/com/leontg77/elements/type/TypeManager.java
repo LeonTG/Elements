@@ -61,6 +61,10 @@ public class TypeManager {
 	public void removeType(Player player) {
 		Type type = getType(player);
 		
+		if (type == null) {
+			return;
+		}
+		
 		type.removePlayer(player);
 		
 		for (PotionEffect effect : type.getEffects()) {
