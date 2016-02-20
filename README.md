@@ -18,7 +18,7 @@ ___
 
 /elements set - *Set the types for all the teams.*
 
-/elements set - *Clear the types for all the teams.*
+/elements clear - *Clear the types for all the teams.*
 
 /elist - *View who has what type on which team.*
 
