@@ -13,7 +13,6 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Team;
 
-import com.google.common.collect.Lists;
 import com.leontg77.elements.Main;
 import com.leontg77.elements.type.Type;
 import com.leontg77.elements.type.TypeManager;
@@ -35,7 +34,7 @@ public class ElementsCommand implements CommandExecutor, TabCompleter {
 		this.plugin = plugin;
 	}
 	
-	public boolean enabled = false;
+	private boolean enabled = false;
 	
 	/**
 	 * Check if the scenario is enabled.
@@ -119,7 +118,7 @@ public class ElementsCommand implements CommandExecutor, TabCompleter {
 					continue;
 				}
 				
-				online.sendMessage(Main.PREFIX + "You are the" + type.getName() + " type.");
+				online.sendMessage(Main.PREFIX + "You are the §6" + type.getName() + "§7 type.");
 			}
 
 			PlayerUtils.broadcast(Main.PREFIX + "Set types.");
@@ -187,7 +186,7 @@ public class ElementsCommand implements CommandExecutor, TabCompleter {
 	 * @return A random type.
 	 */
     private Type getRandomType(Player player) {
-        List<Type> available = Lists.newArrayList(manager.getTypes());
+        List<Type> available = new ArrayList<Type>(manager.getTypes());
         Team team = player.getScoreboard().getEntryTeam(player.getName());
 
         if (team != null) {
