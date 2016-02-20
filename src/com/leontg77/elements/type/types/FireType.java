@@ -3,11 +3,12 @@ package com.leontg77.elements.type.types;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
-import org.bukkit.entity.SmallFireball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -60,10 +61,10 @@ public class FireType extends Type implements Listener {
 		}
 		
 		if (fireball.contains(player.getName())) {
-			player.sendMessage(Main.PREFIX + "You will now shoot fireballs");
+			player.sendMessage(Main.PREFIX + "You will now shoot arrows.");
 			fireball.remove(player.getName());
 		} else {
-			player.sendMessage(Main.PREFIX + "You will now shoot arrows");
+			player.sendMessage(Main.PREFIX + "You will now shoot fireballs.");
 			fireball.add(player.getName());
 		}
 	}
@@ -91,7 +92,9 @@ public class FireType extends Type implements Listener {
 		
 		arrow.remove();
 		
-		SmallFireball ball = arrow.getWorld().spawn(arrow.getLocation(), SmallFireball.class);
+		Location loc = arrow.getLocation().toVector().add(arrow.getLocation().getDirection().multiply(3)).toLocation(player.getWorld());
+		
+		Fireball ball = arrow.getWorld().spawn(loc, Fireball.class);
 		ball.setVelocity(vec);
 		
 	}
