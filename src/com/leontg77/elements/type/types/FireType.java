@@ -3,7 +3,6 @@ package com.leontg77.elements.type.types;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Fireball;
@@ -20,7 +19,6 @@ import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.projectiles.ProjectileSource;
-import org.bukkit.util.Vector;
 
 import com.leontg77.elements.Main;
 import com.leontg77.elements.type.Type;
@@ -87,15 +85,8 @@ public class FireType extends Type implements Listener {
 			return;
 		}
 		
-		Entity arrow = event.getProjectile();
-		Vector vec = arrow.getVelocity();
-		
-		arrow.remove();
-		
-		Location loc = arrow.getLocation().toVector().add(arrow.getLocation().getDirection().multiply(3)).toLocation(player.getWorld());
-		
-		Fireball ball = arrow.getWorld().spawn(loc, Fireball.class);
-		ball.setVelocity(vec);
+		event.getProjectile().remove();
+		player.launchProjectile(Fireball.class);
 		
 	}
 	
