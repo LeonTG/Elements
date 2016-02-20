@@ -188,6 +188,10 @@ public class EarthType extends Type implements Listener {
 			return;
 		}
 		
+		if (player.hasPotionEffect(PotionEffectType.SPEED)) {
+			player.removePotionEffect(PotionEffectType.SPEED);
+		}
+		
 		player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 1));
 	}
 	

@@ -42,6 +42,18 @@ public class WaterType extends Type implements Listener {
 		if (block.getType() != Material.WATER && block.getType() != Material.STATIONARY_WATER) {
 			return;
 		}
+		
+		if (player.hasPotionEffect(PotionEffectType.WATER_BREATHING)) {
+			player.removePotionEffect(PotionEffectType.WATER_BREATHING);
+		}
+		
+		if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) {
+			player.removePotionEffect(PotionEffectType.NIGHT_VISION);
+		}
+		
+		if (player.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
+			player.removePotionEffect(PotionEffectType.INVISIBILITY);
+		}
 
 		player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 100, 1));
 		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 1));
