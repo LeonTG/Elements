@@ -10,11 +10,15 @@ ___
 
 **Commands:**
 
+/elements info - *View the scenario information.*
+
 /elements enable - *Enable the scenario.*
 
 /elements disable - *Disable the scenario.*
 
 /elements set - *Set the types for all the teams.*
+
+/elements set - *Clear the types for all the teams.*
 
 /elist - *View who has what type on which team.*
 
