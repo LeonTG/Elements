@@ -55,9 +55,9 @@ public class WaterType extends Type implements Listener {
 			player.removePotionEffect(PotionEffectType.INVISIBILITY);
 		}
 
-		player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 100, 1));
-		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 1));
-		player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 1));
+		player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 10, 1));
+		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 10, 1));
+		player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 10, 1));
 		
 		player.setVelocity(player.getLocation().getDirection().multiply(1));
 	}
