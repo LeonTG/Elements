@@ -26,7 +26,7 @@ ___
 
 *elements.manage* - Permission to use /elements
 
-*elements.list* - Permission to use /elist
+No permission for /elist
 
 ___
 [Download](https://github.com/LeonTG77/Elements/releases)
