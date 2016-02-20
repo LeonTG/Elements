@@ -14,9 +14,9 @@ import com.leontg77.elements.utils.BlockUtils;
  * @author LeonTG77
  */
 public class Main extends JavaPlugin {
-	public static final String PREFIX = "§aElements §8» §f";
+	public static final String PREFIX = "§aElements §8» §7";
 
-	private Main() {
+	public Main() {
 		BlockUtils.setPlugin(this);
 	}
 	
@@ -33,6 +33,7 @@ public class Main extends JavaPlugin {
 		getLogger().info("The plugin is made by LeonTG77.");
 		
 		final TypeManager manager = new TypeManager(this);
+		manager.setup();
 		
 		final ElementsCommand mainCommand = new ElementsCommand(this, manager);
 		final ElistCommand listCommand = new ElistCommand(manager, mainCommand);
