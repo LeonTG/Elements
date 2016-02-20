@@ -1,0 +1,11 @@
+name: Elements
+main: com.leontg77.elements.Main
+version: 1.0
+author: LeonTG77
+description: Elements is a To4 gamemode where each player on the team represents one of the four elements — air, fire, water, and earth, each with it's own abilities, both passive and active.
+
+commands:
+  elements:
+    description: Manager the scenario.
+  elist:
+    description: View the types for all players.
